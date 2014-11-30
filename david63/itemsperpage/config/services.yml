@@ -1,0 +1,10 @@
+services:
+    david63.itemsperpage.listener:
+        class: david63\itemsperpage\event\listener
+        arguments:
+            - @config
+            - @request
+            - @template			
+            - @user
+        tags:
+            - { name: event.listener }
