@@ -110,8 +110,8 @@ class listener implements EventSubscriberInterface
 		$data = $event['data'];
 
 		$data = array_merge($data, array(
-			'posts_per_page'	=> request_var('posts_per_page', (!empty($user->data['user_posts_per_page'])) ? $user->data['user_posts_per_page'] : 0),
-			'topics_per_page'	=> request_var('topics_per_page', (!empty($user->data['user_topics_per_page'])) ? $user->data['user_topics_per_page'] : 0),
+			'posts_per_page'	=> $this->request->variable('posts_per_page', (!empty($user->data['user_posts_per_page'])) ? $user->data['user_posts_per_page'] : 0),
+			'topics_per_page'	=> $this->request->variable('topics_per_page', (!empty($user->data['user_topics_per_page'])) ? $user->data['user_topics_per_page'] : 0),
 		));
 
 		$event->offsetSet('data', $data);
