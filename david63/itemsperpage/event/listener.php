@@ -40,7 +40,7 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\user                $user		User object
 	* @access public
 	*/
-	public function __construct($config, $request, $template, $user)
+	public function __construct(\phpbb\config\config $config, \phpbb\request\request $request, \phpbb\template\twig\twig $template, \phpbb\user $user)
 	{
 		$this->config	= $config;
 		$this->request	= $request;
